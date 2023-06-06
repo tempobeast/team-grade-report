@@ -8,8 +8,9 @@ function LoginPage() {
     return (
         <div>
             <button onClick={() => setToggleLogin(!toggleLogin)}>
-                {toggleLogin ? <LoginForm/> : <SignupForm/>}
+                {toggleLogin ? "Login" : "Sign Up"}
             </button>
+            {toggleLogin ? <LoginForm/> : <SignupForm/>}
         </div>
     )
 }
