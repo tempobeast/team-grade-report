@@ -8,6 +8,13 @@ function LoginForm() {
     })
     const [isLoading, setIsLoading] = useState(false)
 
+    function handleChange(e) {
+        setFormData({
+            ...formData,
+            [e.target.id]: e.target.value
+        })
+    }
+
     return (
         <div>
             <h1></h1>
@@ -18,6 +25,7 @@ function LoginForm() {
                     id='username'
                     autoComplete='off'
                     value={formData.username}
+                    onChange={handleChange}
                     required
                 />
                 <label htmlFor="password">Password:</label>
@@ -26,6 +34,7 @@ function LoginForm() {
                     id="password"
                     autoComplete='off'
                     value={formData.password}
+                    onChange={handleChange}
                     required
                 />
                 <button type="submit">{isLoading ? "Loading..." : "Login"}</button>
